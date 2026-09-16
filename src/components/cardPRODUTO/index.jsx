@@ -1,27 +1,18 @@
-import Receitas from "@/components/cardPRODUTO";
+export default function CardProduto({ receita }) {
+  if (!receita) return null;
 
- <main>
-            <h1>Receitas</h1>
-            {msgErro != "" && <p>ERRO: {msgErro}</p> }
-            
-
-            {listaReceitas.length > 0 ?
-                <div>
-                  {listaReceitas.map( (user, idx) => {
-                  return(
-                    <div key={idx}>
-                        <h3>{user.name.first}{" "}{user.name.last}</h3>
-                        <img src={user.picture.large} alt="" />
-
-                        </div>
-                     )
-                  } )}
-                </div>
-                :
-                // aparece qndo não tem usuario
-                <div>
-                    <p>Sem nenhum usuario por enquanto...</p>
-                </div>
-            }
-
-        </main>
+  return (
+    <article>
+      <img src={receita.image} alt={receita.name} />
+      <h3>{receita.name}</h3>
+      <p>{receita.cuisine}</p>
+      <p>Dificuldade: {receita.difficulty}</p>
+      <p>Tempo: {receita.prepTimeMinutes + receita.cookTimeMinutes} min</p>
+      <ul>
+        {receita.ingredients?.slice(0, 3).map((item, index) => (
+          <li key={`${receita.id}-${index}`}>{item}</li>
+        ))}
+      </ul>
+    </article>
+  );
+}
