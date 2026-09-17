@@ -20,16 +20,16 @@ export default function ReceitasPage() {
     <main>
       <h1>Receitas</h1>
 
-      {msgErro && <p>ERRO: {msgErro}</p>}
+      {msgErro && <p className="msg-erro">ERRO: {msgErro}</p>}
 
       {listaReceitas.length > 0 ? (
-        <div>
+        <div className="container-receitas">
           {listaReceitas.map((receita, index) => (
             <CardProduto key={receita.id || index} receita={receita} />
           ))}
         </div>
       ) : (
-        <div>
+        <div className="sem-receitas">
           <p>Sem nenhuma receita por enquanto...</p>
         </div>
       )}
