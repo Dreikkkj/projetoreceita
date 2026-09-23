@@ -1,4 +1,4 @@
-/* Reset simples e container principal */
+
 main {
   max-width: 1200px;
   margin: 0 auto;
@@ -12,7 +12,6 @@ main h1 {
   margin-bottom: 24px;
 }
 
-/* CONTAINER DAS RECEITAS (força exibição em grid) */
 .container-receitas {
   display: grid !important;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
@@ -20,7 +19,6 @@ main h1 {
   width: 100%;
 }
 
-/* ESTRUTURA DO CARD INDIVIDUAL */
 .card-produto {
   display: flex !important;
   flex-direction: column !important;
@@ -39,7 +37,6 @@ main h1 {
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* FIX DA IMAGEM (evita esticar no ecrã) */
 .card-produto img {
   width: 100% !important;
   max-width: 100% !important;
@@ -48,7 +45,6 @@ main h1 {
   display: block;
 }
 
-/* CONTEÚDO E TEXTO DO CARD */
 .card-produto .conteudo-card {
   padding: 16px;
   display: flex;
